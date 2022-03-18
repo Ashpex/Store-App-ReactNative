@@ -10,9 +10,10 @@ import consoleImage from '../assets/console.png'
 
 
 export default function CategoryListItem(props) {
+    const {category} = props;
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>CategoryListItem</Text>
+      <Text style={styles.title}>{category.name}</Text>
       <Image style={styles.categoryImage} source={consoleImage} />
     </View>
   )
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.3,
         shadowRadius: 10,
         shadowOffset: { width: 0, height: 0 },
-        elevation: 2,
+        elevation: 3,
         marginBottom: 16,
     },
     categoryImage: {
