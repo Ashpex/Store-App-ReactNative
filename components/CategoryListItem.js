@@ -4,18 +4,20 @@ import{
     Text,
     View,
     StyleSheet,
+    TouchableOpacity,
+    Alert,
 } from 'react-native'
 
-import consoleImage from '../assets/console.png'
-
-
 export default function CategoryListItem(props) {
-    const {category} = props;
+    const {category, onPress} = props;
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{category.name}</Text>
-      <Image style={styles.categoryImage} source={consoleImage} />
-    </View>
+      <TouchableOpacity activeOpacity={0.5} 
+        onPress={onPress}>
+        <View style={styles.container}>
+            <Text style={styles.title}>{category.name}</Text>
+            <Image style={styles.categoryImage} source={category.image} />
+        </View>
+    </TouchableOpacity>
   )
 }
 
